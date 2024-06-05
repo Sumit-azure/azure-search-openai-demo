@@ -35,7 +35,7 @@ param storageResourceGroupLocation string = location
 param storageContainerName string = 'content'
 param storageSkuName string // Set in main.parameters.json
 
-param userStorageAccountName string = ''
+param userStorageAccountName string = 'st${uniqueString(guidValue)}'
 param userStorageContainerName string = 'user-content'
 
 param appServiceSkuName string // Set in main.parameters.json
