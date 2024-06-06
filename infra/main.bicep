@@ -161,7 +161,7 @@ param vmSize string = 'Standard_DS1_v2'
 
 @description('Id of the user or app to assign application roles')
 param principalId string = ''
-param guid string = newGuid()
+
 @description('Use Application Insights for monitoring and performance tracing')
 param useApplicationInsights bool = false
 
@@ -181,11 +181,8 @@ param useUserUpload bool = false
 param useLocalPdfParser bool = false
 param useLocalHtmlParser bool = false
 
-
-@description('Enter any 4 digits unqiue id')
-param  DID bool 
 var abbrs = loadJsonContent('abbreviations.json')
-var resourceToken = toLower(uniqueString(subscription().id, environmentName, DID))
+var resourceToken = toLower(uniqueString(subscription().id, environmentName, location))
 var tags = { 'azd-env-name': environmentName }
 
 var tenantIdForAuth = !empty(authTenantId) ? authTenantId : tenantId
