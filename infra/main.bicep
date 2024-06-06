@@ -181,8 +181,11 @@ param useUserUpload bool = false
 param useLocalPdfParser bool = false
 param useLocalHtmlParser bool = false
 
+
+@description('Enter any 4 digits unqiue id')
+param  DID bool 
 var abbrs = loadJsonContent('abbreviations.json')
-var resourceToken = toLower(uniqueString(subscription().id, environmentName, guid))
+var resourceToken = toLower(uniqueString(subscription().id, environmentName, DID))
 var tags = { 'azd-env-name': environmentName }
 
 var tenantIdForAuth = !empty(authTenantId) ? authTenantId : tenantId
