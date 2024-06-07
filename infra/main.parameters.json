@@ -14,9 +14,7 @@
     "principalId": {
       "value": "${AZURE_PRINCIPAL_ID}"
     },
-    "openAiServiceName": {
-      "value": "${AZURE_OPENAI_SERVICE}"
-    },
+   
     "openAiResourceGroupName": {
       "value": "${AZURE_OPENAI_RESOURCE_GROUP}"
     },
